@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+
+    User->>Browser: Enters note and clicks "Save"
+    Browser->>Server: POST /new_note_spa (JSON: note content, date)
+    Server-->>Browser: JSON ("message": "note created")
+    Browser->>User: Updates UI with new note

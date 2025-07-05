@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+
+    User->>Browser: Navigates to /spa
+    Browser->>Server: GET /spa
+    Server-->>Browser: HTML (SPA page)
+    Browser->>Server: GET /main.css
+    Server-->>Browser: CSS file
+    Browser->>Server: GET /spa.js
+    Server-->>Browser: JavaScript file
+    Browser->>Server: GET /data.json
+    Server-->>Browser: JSON (notes data)
+    Browser->>User: Renders notes dynamically

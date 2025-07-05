@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant User
+    participant Browser
+    participant Server
+
+    User->>Browser: Enters note and clicks "Save"
+    Browser->>Server: POST /new_note (form data: note content)
+    Server-->>Browser: HTTP 302 Redirect to /notes
+    Browser->>Server: GET /notes
+    Server-->>Browser: HTML (updated notes page)
+    Browser->>User: Renders updated notes page
